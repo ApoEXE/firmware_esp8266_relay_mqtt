@@ -17,7 +17,7 @@
 
 #define MAYOR 1
 #define MINOR 0
-#define PATCH 1
+#define PATCH 2
 #define WIFI_SSID "JAVI"
 #define WIFI_PASS "xavier1234"
 // MQTT
@@ -31,6 +31,8 @@ bool state = 1;
 AsyncWebServer server(8080);
 
 // MQTT
+std::string device = "HEATPATCH_1";
+std::string TOPIC_IP = "Tanque1/canal/ip/" + device;
 const char *mqtt_server = "192.168.1.251";
 const char *TOPIC = "Tanque1/canal/temperature/heatpatch1";
 WiFiClient espClient;
@@ -111,6 +113,9 @@ void loop()
       // Serial.println(msg);
       snprintf(msg, MSG_BUFFER_SIZE, "%d", digitalRead(relay));
       client.publish(TOPIC, msg);
+      delay(5);
+      snprintf(msg, MSG_BUFFER_SIZE, "%s:%s", device.c_str(), WiFi.localIP().toString().c_str());
+      client.publish(TOPIC_IP.c_str(), msg);
     }
   }
 }
