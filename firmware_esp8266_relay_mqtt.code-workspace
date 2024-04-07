@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "firmware_esp8266_relay_mqtt",
+			"path": "firmware_esp8266_relay_mqtt"
+		},
+		{
+			"name": "esp8266_tds_mqtt",
+			"path": "../firmware_esp8266_tds_mqtt/esp8266_tds_mqtt"
+		},
+		{
+			"name": "esp8266_alexa_ota_iot",
+			"path": "../iot_alexa_tcp_server_esp8266/esp8266_alexa_ota_iot"
+		},
+		{
+			"name": "aj-sr04M",
+			"path": "../firmware_esp8266_aj-sr04m/aj-sr04M"
+		}
+	],
+	"settings": {}
+}
